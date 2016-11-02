@@ -1,0 +1,30 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+my @localtime = localtime();
+my $year;
+my $month;
+my $day;
+my $today;
+
+print "Date is $localtime[3]", "-", ($localtime[4]+1), "-", ($localtime[5]-100), "\n";
+
+$year = $localtime[5]-100;
+
+$month = $localtime[4]+1;
+if ($month =~ m/(^\d$)/)
+  { 
+  $month =~ s/(^\d$)/0$1/;
+  }
+  
+$day = $localtime[3];
+if ($day =~ m/(^\d$)/)
+  { 
+  $day =~ s/(^\d$)/0$1/;
+  }
+  
+print "Year is $year\n";
+print "Month is $month\n";
+print "Day is $day\n";
+$today = ($localtime[5]-100).$month.$day;
+print "Todays log file date is $today\n";
