@@ -1,0 +1,9 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my @localtime = localtime();
+
+if (  ( (($localtime[5]+1900)/4) =~ m/^\d*$/ ) and ( (($localtime[5]+1900)/100) =~ m/^\d*\./ ) and ( (($localtime[5]+1900)/400) =~ m/^\d*\./ ) ) {
+	#Commands for a leap year
+	}
